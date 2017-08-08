@@ -2,6 +2,7 @@
 #include <omp.h>
 int main()
 {
+     printf("Maximum threads used for parallel region = %d\n",omp_get_max_threads());
      #pragma omp parallel
      {
           printf("The default number of threads= %d\n",omp_get_num_threads());
@@ -15,15 +16,14 @@ int main()
      }
 
      /*Maximum number of threads used for the current parallel region that does not use the clause num_threads.*/
-     printf("Maximum threads used for parallel region= %d\n",omp_get_max_threads() );
+
 
      /*Number of threads used by default in subsequent parallel sections*/
      omp_set_num_threads(3);
-     printf("Set number of threads to be used by default     =%d\n",omp_get_num_threads() );
+     printf("Set number of threads to be used by default = %d\n",omp_get_num_threads());
 
      #pragma omp parallel
      {
-
           printf("Thread\n");
      }
 }
