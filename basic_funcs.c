@@ -22,8 +22,5 @@ int main()
      omp_set_num_threads(3);
      printf("Set number of threads to be used by default = %d\n",omp_get_num_threads());
 
-     #pragma omp parallel
-     {
-          printf("Thread\n");
-     }
+     
 }
